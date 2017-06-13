@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.objectFactory" value="spring" />
+	<package name="default" extends="struts-default">
+		<global-results>
+			<result name="error">/error.jsp</result>
+			<result name="finish">/finish.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		<action name="hello" class="eg1_0.HelloWorldAction" method="execute">
+			<result name="success"> /eg1_0/result.jsp</result>
+		</action>
+		<action name="register3_1" class="eg3_1.action.RegisterAction"
+			method="regist">
+			<result name="success"> /eg3_1/success.jsp</result>
+			<result name="false"> /eg3_1/false.jsp</result>
+		</action>
+		<action name="employeeAction" class="employeeAction">
+			<result name="findEmployee"> /employee.jsp</result>
+			<result name="updateEmployee"> /updateEmployee.jsp</result>
+		</action>
+		<action name="helloworld" class="helloWorld.HelloWorldAction"
+			method="execute">
+			<result name="success">/helloworld_result.jsp  </result>
+		</action>
+		<action name="register" class="action.RegisterAction" method="regist">
+			<result name="success">/success.jsp  </result>
+			<result name="false">/false.jsp  </result>
+		</action>
+	</package>
+</struts>
